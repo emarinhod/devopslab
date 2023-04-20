@@ -26,13 +26,13 @@ jobs:
 
       - name: Unit Test
         run: |
-          coverage run --source=app -m pytest test.py
+          coverage run --source=app --relative_files=True -m pytest test.py
           coverage report -m
           coverage xml -i
       
       - name: fix code coverage paths
         run: |
-          sed -i 's/\/home\/runner\/work\/devopslab\/devopslab\//\/github\/workspace\//g' cover/coverage.xml
+          sed -i 's/\/home\/runner\/work\/devopslab\/devopslab\//\/github\/workspace\//g' coverage.xml
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master  #https://github.com/marketplace/actions/sonarcloud-scan
