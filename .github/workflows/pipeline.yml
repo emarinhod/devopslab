@@ -32,7 +32,7 @@ jobs:
       
       - name: fix code coverage paths
         run: |
-          sed -i 's/\/home\/runner\/work\/devopslab\/devopslab\//\/github\/workspace\//g' coverage.xml
+          sed -i 's/\/home\/runner\/work\/devopslab\/devopslab\//\/github\/workspace\//g' github/workspace/coverage.xml
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master  #https://github.com/marketplace/actions/sonarcloud-scan
